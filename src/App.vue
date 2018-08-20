@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav
+      id="nav"
+      class="navbar is-primary"
+      role="navigation"
+      aria-label="main-navigation"> 
+      <div class="navbar-brand">
+        <a
+          class="navbar-item"
+          href="/">
+          <i class="fa fa-2x fa-home"/>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        <router-link
+          class="navbar-item"
+          to="/receita">
+          Receitas
+        </router-link>
+        <router-link
+          class="navbar-item"
+          to="/produto">
+          Produtos
+        </router-link>
+        <router-link
+          class="navbar-item"
+          to="/fornecedor">
+          Fornecedor
+        </router-link>
+      </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
+        <router-view/>
+      </div>
+    </section>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+  @import "../node_modules/bulma/bulma";
+  @import "../node_modules/font-awesome/css/font-awesome.min.css";
 </style>
